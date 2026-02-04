@@ -21,7 +21,7 @@ body {
 
 
 .logo {
-    width: 180px;
+    width: 220px;
     height: auto;
     margin-bottom: 20px;
 }
@@ -116,6 +116,7 @@ h1 {
     color: #555;
 }
 EOF
+
 
 
 
