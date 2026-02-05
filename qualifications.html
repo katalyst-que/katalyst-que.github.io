@@ -6,6 +6,9 @@
     <title>Katrina N. // Qualifications Protocol</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        * {
+        box-sizing: border-box;
+        }
         body {
             background-color: #0a0a0a;
             color: #e0e0e0;
@@ -67,12 +70,29 @@
         .back-link:hover { color: #D4AF37; }
         /* MOBILE ADJUSTMENTS */
         @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Reduces edge gap on phones */
+            }
             .container {
-                padding-top: 100px; /* Lowers everything significantly on mobile */
+                padding-top: 80px; /* Keeps the logo lower but safe */
+                width: 100%;
+                overflow-x: hidden; /* Prevents side-scrolling */
+            }
+            h1 {
+                font-size: 1.5rem; /* CRITICAL: Shrinks the big title so it fits */
+                word-wrap: break-word; /* Safety net if it's still too long */
             }
             .logo-small {
-                width: 100px;      /* Makes logo slightly bigger on mobile */
-                margin-bottom: 25px;
+                width: 100px;
+                margin-bottom: 20px;
+            }
+            .disclaimer-box {
+                padding: 15px; /* Gives text more room inside the box */
+                margin: 20px 0;
+            }
+            .btn {
+                width: 100%; /* Makes the button easy to tap */
+                box-sizing: border-box;
             }
         }
     </style>
