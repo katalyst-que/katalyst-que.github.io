@@ -133,6 +133,77 @@ h1 {
   flex-shrink: 0;
 }
 
+/* ─── HERO SUB / TAGLINE ────────────────────────────────────────────────────── */
+.hero-sub {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.tagline {
+  font-size: 0.78rem;
+  line-height: 1.9;
+  color: var(--text);
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 14px;
+  margin-bottom: 32px;
+  width: 100%;
+  text-align: left;
+}
+.tagline-accent {
+  color: var(--gold);
+}
+
+/* ─── SERVICE CARDS ─────────────────────────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.service-card {
+  border: 1px solid var(--border);
+  padding: 14px;
+  transition: border-color 0.2s;
+}
+.service-card:hover { border-color: var(--gold-dim); }
+
+.service-name {
+  font-size: 0.62rem;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  margin-bottom: 7px;
+}
+
+.service-desc {
+  font-size: 0.67rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* ─── CONTACT BLOCK ─────────────────────────────────────────────────────────── */
+.contact-email {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  transition: color 0.25s;
+  word-break: break-all;
+}
+.contact-email:hover { color: #fff; }
+
+.contact-sub {
+  font-size: 0.67rem;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+}
+
 /* ─── CTA BUTTON ────────────────────────────────────────────────────────────── */
 .links { width: 100%; margin-bottom: 36px; }
 
@@ -305,4 +376,6 @@ h1 {
   .slash-divider { display: none; }
   .cert-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; }
+  .services-grid { grid-template-columns: 1fr; }
+  .contact-email { font-size: 0.88rem; }
 }
