@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/resume.pdf
-
-Sitemap: https://katalystque.com/sitemap.xml
 
 # ──────────────────────────────────────────────────────────
 # Hi.

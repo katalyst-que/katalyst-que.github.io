@@ -41,9 +41,6 @@
       <span class="tc-sep">//</span>
       <a href="https://www.linkedin.com/in/katrina-natura"
          target="_blank" rel="noopener noreferrer" class="tc-link">LinkedIn</a>
-      <span class="tc-sep">//</span>
-      <a href="assets/resume.pdf"
-         target="_blank" rel="noopener noreferrer" class="tc-link">Resume PDF</a>
     </div>
 
     <!-- ── Hero ─────────────────────────────────────────────────────────── -->
@@ -138,11 +135,8 @@
     </p>
 
     <!-- ── Actions ───────────────────────────────────────────────────────── -->
-    <div class="action-row" style="margin-top: 32px;">
-      <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        FULL RESUME (PDF)
-      </a>
-      <a href="mailto:echo@katalystque.com?subject=Inquiry%20%E2%80%94%20KatalystQue" class="btn btn-outline">
+    <div style="margin-top: 32px; margin-bottom: 0;">
+      <a href="mailto:echo@katalystque.com?subject=Inquiry%20%E2%80%94%20KatalystQue" class="btn btn-primary">
         GET IN TOUCH
       </a>
     </div>
@@ -217,7 +211,7 @@
           var r   = rays[i];
           var p   = (Math.sin(2 * Math.PI * t / r.period + r.phase) + 1) / 2;
           var len = diag * r.maxR * p;
-          var op  = p * 0.28;
+          var op  = p * 0.37;
           if (op < 0.008) continue;
 
           var ex = ox + Math.cos(r.a) * len;
