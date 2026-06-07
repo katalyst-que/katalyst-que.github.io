@@ -415,12 +415,121 @@ h1 {
   margin-bottom: 28px;
 }
 
+/* ─── LASER CANVAS BACKGROUND ───────────────────────────────────────────────── */
+#laserBg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* ─── QUALIFICATIONS PAGE ───────────────────────────────────────────────────── */
 .qual-container {
   width: 100%;
   max-width: 640px;
-  padding: 40px 20px 60px;
+  padding: 32px 20px 60px;
   animation: fadeIn 0.6s ease both;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Contact bar ── */
+.top-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.tc-email {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.tc-email:hover { color: #fff; }
+.tc-sep { color: var(--border-hi); }
+.tc-link {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.tc-link:hover { color: var(--gold); }
+
+/* ── Hero ── */
+.qual-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.logo-qual {
+  width: 110px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: logoGlow 5s ease-in-out infinite;
+}
+.qual-brand {
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+  color: #fff;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.qual-tagline {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+/* ── Capabilities list ── */
+.capabilities-list {
+  width: 100%;
+  margin-bottom: 36px;
+}
+.capability-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.capability-item:first-child { border-top: 1px solid var(--border); }
+.capability-item:hover { border-color: var(--border-hi); }
+.cap-num {
+  font-size: 0.58rem;
+  letter-spacing: 1.5px;
+  color: var(--gold-dim);
+  padding-top: 3px;
+}
+.cap-title {
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  margin-bottom: 7px;
+}
+.cap-desc {
+  font-size: 0.76rem;
+  color: #c0c0c0;
+  line-height: 1.8;
+}
+
+/* ── Credentials ── */
+.creds-line {
+  font-size: 0.68rem;
+  color: #a0a0a0;
+  line-height: 1.9;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.creds-edu {
+  font-size: 0.68rem;
+  color: var(--gold-dim);
+  letter-spacing: 1px;
+  margin-bottom: 0;
 }
 
 .qual-header {

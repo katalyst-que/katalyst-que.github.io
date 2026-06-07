@@ -16,7 +16,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qualifications // KatalystQue</title>
+  <title>KatalystQue // Capabilities</title>
 
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
@@ -30,62 +30,224 @@
 </head>
 <body>
 
+  <!-- Background laser animation -->
+  <canvas id="laserBg" aria-hidden="true"></canvas>
+
   <div class="qual-container">
 
-    <div class="qual-header">
-      <a href="index.html">
-        <img src="assets/kq-logo.svg" alt="KatalystQue" class="logo-small">
+    <!-- ── Contact bar ──────────────────────────────────────────────────── -->
+    <div class="top-contact">
+      <a href="mailto:echo@katalystque.com" class="tc-email">echo@katalystque.com</a>
+      <span class="tc-sep">//</span>
+      <a href="https://www.linkedin.com/in/katrina-natura"
+         target="_blank" rel="noopener noreferrer" class="tc-link">LinkedIn</a>
+      <span class="tc-sep">//</span>
+      <a href="assets/resume.pdf"
+         target="_blank" rel="noopener noreferrer" class="tc-link">Resume PDF</a>
+    </div>
+
+    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+    <div class="qual-hero">
+      <a href="index.html" aria-label="Back to home">
+        <img src="assets/kq-logo.svg" alt="KatalystQue" class="logo-qual">
       </a>
-      <h1>QUALIFICATIONS<span class="cursor" aria-hidden="true"></span></h1>
-      <p class="subtitle">ACTIVE CREDENTIALS &amp; BACKGROUND</p>
+      <h1 class="qual-brand">KATALYSTQUE<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="qual-tagline">Digital Protection &nbsp;·&nbsp; Automation &nbsp;·&nbsp; Operational Governance</p>
     </div>
 
-    <!-- Certifications -->
-    <p class="section-label">// Active Certifications</p>
-    <div class="cert-grid">
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA PenTest+ ce</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA CySA+</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA Security+ ce</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA Network+ ce</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA A+ ce</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA Project+</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>ISC2 SSCP</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>ITIL 4 Foundation</div>
-      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>LPI Linux Essentials</div>
-    </div>
+    <!-- ── Capabilities ──────────────────────────────────────────────────── -->
+    <p class="section-label">// Capabilities</p>
+    <div class="capabilities-list">
 
-    <!-- Education -->
-    <p class="section-label">// Education</p>
-    <div class="education-block">
-      <div class="edu-title">B.S. Cybersecurity and Information Assurance</div>
-      <div class="edu-school">Western Governors University &nbsp;//&nbsp; Feb 2026</div>
-      <div class="edu-note">
-        NSA Validated Program of Study &nbsp;·&nbsp; NSA Center of Academic Excellence (CAE)<br>
-        Excellence Award — Emerging Technologies in Cybersecurity
+      <div class="capability-item">
+        <span class="cap-num">01</span>
+        <div>
+          <div class="cap-title">THREAT DETECTION &amp; RESPONSE</div>
+          <div class="cap-desc">Proactive identification of attack vectors, anomalous behavior, and exposure points — with structured containment, eradication, and recovery processes that limit damage and restore operations fast.</div>
+        </div>
       </div>
+
+      <div class="capability-item">
+        <span class="cap-num">02</span>
+        <div>
+          <div class="cap-title">COMPLIANCE ARCHITECTURE</div>
+          <div class="cap-desc">Building audit-ready security programs around HIPAA, NIST 800-53, and PCI-DSS — evidence pipelines, control frameworks, and documentation designed to hold up before the examiner arrives, not in response to one.</div>
+        </div>
+      </div>
+
+      <div class="capability-item">
+        <span class="cap-num">03</span>
+        <div>
+          <div class="cap-title">WORKFLOW AUTOMATION</div>
+          <div class="cap-desc">Engineering intelligent process flows that eliminate manual bottlenecks — from M365 and Power Automate pipelines to scripted infrastructure tasks — freeing people for work that actually requires judgment.</div>
+        </div>
+      </div>
+
+      <div class="capability-item">
+        <span class="cap-num">04</span>
+        <div>
+          <div class="cap-title">ENDPOINT GOVERNANCE</div>
+          <div class="cap-desc">Managing device fleets across heterogeneous environments — Intune, Jamf, Meraki — with consistent policy enforcement, zero-touch deployment, and real-time visibility into the endpoint surface.</div>
+        </div>
+      </div>
+
+      <div class="capability-item">
+        <span class="cap-num">05</span>
+        <div>
+          <div class="cap-title">SECURITY ASSESSMENTS</div>
+          <div class="cap-desc">Structured vulnerability analysis and risk posture reviews informed by a penetration testing methodology — finding the gaps an attacker would find, before they do.</div>
+        </div>
+      </div>
+
+      <div class="capability-item">
+        <span class="cap-num">06</span>
+        <div>
+          <div class="cap-title">IDENTITY &amp; ACCESS MANAGEMENT</div>
+          <div class="cap-desc">Designing IAM frameworks that enforce least-privilege principles across cloud and on-prem environments — built to support audits, scale with growth, and survive the departure of any single administrator.</div>
+        </div>
+      </div>
+
+      <div class="capability-item">
+        <span class="cap-num">07</span>
+        <div>
+          <div class="cap-title">INFRASTRUCTURE HARDENING</div>
+          <div class="cap-desc">Securing cloud and on-prem environments at the network, endpoint, and application layers — configuration hardening, patch management, and defense-in-depth design before and after deployment.</div>
+        </div>
+      </div>
+
+      <div class="capability-item">
+        <span class="cap-num">08</span>
+        <div>
+          <div class="cap-title">PROJECT LEADERSHIP</div>
+          <div class="cap-desc">Full-cycle technical project delivery — scope definition, cross-functional coordination, risk tracking, and stakeholder communication — from kickoff to on-time, documented close.</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Resume -->
-    <p class="section-label">// Resume</p>
-    <div class="action-row">
+    <!-- ── Credentials (brief) ───────────────────────────────────────────── -->
+    <p class="section-label">// Credentials</p>
+    <p class="creds-line">
+      CompTIA PenTest+ &nbsp;·&nbsp; CySA+ &nbsp;·&nbsp; Security+ &nbsp;·&nbsp;
+      Network+ &nbsp;·&nbsp; A+ &nbsp;·&nbsp; Project+ &nbsp;·&nbsp;
+      ISC2 SSCP &nbsp;·&nbsp; ITIL 4 &nbsp;·&nbsp; LPI Linux Essentials
+    </p>
+    <p class="creds-edu">
+      B.S. Cybersecurity &amp; Information Assurance &nbsp;—&nbsp; Western Governors University
+      &nbsp;//&nbsp; NSA Center of Academic Excellence
+    </p>
+
+    <!-- ── Actions ───────────────────────────────────────────────────────── -->
+    <div class="action-row" style="margin-top: 32px;">
       <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        OPEN RESUME PDF
+        FULL RESUME (PDF)
       </a>
-      <a href="mailto:echo@katalystque.com?subject=Inquiry — KatalystQue" class="btn btn-outline">
-        CONTACT
+      <a href="mailto:echo@katalystque.com?subject=Inquiry%20%E2%80%94%20KatalystQue" class="btn btn-outline">
+        GET IN TOUCH
       </a>
     </div>
 
-    <a href="index.html" class="back-link">← RETURN</a>
+    <a href="index.html" class="back-link" style="margin-top: 24px;">← RETURN</a>
 
   </div>
 
   <script>
     (function () {
-      var dim = 'color:#555; font-size:11px; font-family:monospace; line-height:1.7;';
+
+      // ── Console easter egg ───────────────────────────────────────────────
+      var dim  = 'color:#555; font-size:11px; font-family:monospace; line-height:1.7;';
       var gold = 'color:#C9A84C; font-weight:bold; font-family:monospace;';
-      console.log('%cStill in DevTools on the qualifications page. Thorough.', gold);
-      console.log('%cEverything you need is on the page.\nNothing extra in the DOM worth inspecting.\nNo hidden fields. No session tokens. No API calls.', dim);
+      console.log('%cStill in DevTools on the capabilities page. Thorough.', gold);
+      console.log('%cNothing extra here. No hidden endpoints. No session data.\nIf you\'ve found a genuine issue: echo@katalystque.com', dim);
+
+      // ── Laser background ─────────────────────────────────────────────────
+      var canvas = document.getElementById('laserBg');
+      var ctx    = canvas.getContext('2d');
+      var origin = { x: 0, y: 0 };
+
+      function setOrigin() {
+        var logo = document.querySelector('.logo-qual');
+        if (logo) {
+          var r   = logo.getBoundingClientRect();
+          origin.x = r.left + r.width  / 2;
+          origin.y = r.top  + r.height / 2;
+        } else {
+          origin.x = canvas.width  / 2;
+          origin.y = canvas.height * 0.22;
+        }
+      }
+
+      function resize() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+        setOrigin();
+      }
+      window.addEventListener('resize', resize);
+      window.addEventListener('load',   function () { resize(); setOrigin(); });
+      resize();
+
+      // Ray config
+      var NUM = 22;
+      var rays = [];
+      for (var i = 0; i < NUM; i++) {
+        var base = (i / NUM) * Math.PI * 2;
+        rays.push({
+          a:      base + (Math.random() - 0.5) * 0.3,
+          maxR:   0.15 + Math.random() * 0.42,
+          phase:  Math.random() * Math.PI * 2,
+          period: 9 + Math.random() * 16,
+          branch: Math.random() < 0.55,
+          bOff:   (Math.random() * 0.38 + 0.16) * (Math.random() < 0.5 ? 1 : -1)
+        });
+      }
+
+      function draw(ts) {
+        var t = ts * 0.001;
+        var w = canvas.width;
+        var h = canvas.height;
+        var ox = origin.x || w / 2;
+        var oy = origin.y || h * 0.22;
+        var diag = Math.sqrt(w * w + h * h);
+
+        ctx.clearRect(0, 0, w, h);
+
+        for (var i = 0; i < rays.length; i++) {
+          var r   = rays[i];
+          var p   = (Math.sin(2 * Math.PI * t / r.period + r.phase) + 1) / 2;
+          var len = diag * r.maxR * p;
+          var op  = p * 0.12;
+          if (op < 0.005) continue;
+
+          var ex = ox + Math.cos(r.a) * len;
+          var ey = oy + Math.sin(r.a) * len;
+
+          ctx.beginPath();
+          ctx.moveTo(ox, oy);
+          ctx.lineTo(ex, ey);
+          ctx.strokeStyle = 'rgba(0,230,118,' + op.toFixed(3) + ')';
+          ctx.lineWidth = 0.7;
+          ctx.stroke();
+
+          if (r.branch && p > 0.22) {
+            var bx  = ox + Math.cos(r.a) * len * 0.60;
+            var by  = oy + Math.sin(r.a) * len * 0.60;
+            var bl  = len * 0.42;
+            var ba  = r.a + r.bOff;
+
+            ctx.beginPath();
+            ctx.moveTo(bx, by);
+            ctx.lineTo(bx + Math.cos(ba) * bl, by + Math.sin(ba) * bl);
+            ctx.strokeStyle = 'rgba(0,230,118,' + (op * 0.38).toFixed(3) + ')';
+            ctx.lineWidth = 0.4;
+            ctx.stroke();
+          }
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      requestAnimationFrame(draw);
+
     })();
   </script>
 
