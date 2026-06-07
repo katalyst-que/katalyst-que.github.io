@@ -22,7 +22,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KatalystQue // Cybersecurity & Automation</title>
+  <title>KatalystQue // Security &amp; Automation</title>
 
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
@@ -31,9 +31,8 @@
   <meta http-equiv="Permissions-Policy"
     content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
 
-  <meta name="description" content="KatalystQue — Cybersecurity, automation, and compliance engineering by Katrina Natura. Los Angeles.">
+  <meta name="description" content="KatalystQue — Digital protection, automation, and operational security. Los Angeles.">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="Katrina Natura">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -41,47 +40,67 @@
 
   <div class="container">
 
+    <!-- Brand -->
     <img src="assets/kq-logo.png" alt="KatalystQue" class="logo">
-
     <h1>KATALYSTQUE<span class="cursor" aria-hidden="true"></span></h1>
-    <p class="hero-sub">Katrina Natura &nbsp;//&nbsp; Cybersecurity &amp; Automation Specialist</p>
+    <p class="hero-tagline">Secure by design. Efficient by default.</p>
 
-    <p class="tagline">
-      Zero audit findings. Automated workflows. Hardened environments.<br>
-      <span class="tagline-accent">Built before the threat arrives — not in response to one.</span>
-    </p>
+    <!-- System status (decorative) -->
+    <div class="status-row" aria-hidden="true">
+      <span class="s-item"><span class="s-dot s-dot-green"></span>SYSTEMS NOMINAL</span>
+      <span class="s-sep">//</span>
+      <span class="s-item"><span class="s-dot s-dot-green"></span>ENCRYPTION ACTIVE</span>
+      <span class="s-sep">//</span>
+      <span class="s-item"><span class="s-dot s-dot-gold"></span>MONITORING</span>
+    </div>
 
     <!-- Services -->
-    <p class="section-label">// What I Do</p>
-    <div class="services-grid">
+    <p class="section-label">// Services</p>
+    <div class="pillars">
 
-      <div class="service-card">
-        <div class="service-name">SECURITY &amp; GRC</div>
-        <div class="service-desc">HIPAA · NIST 800-53 · Risk frameworks · Compliance architecture · Zero audit findings track record</div>
+      <div class="pillar">
+        <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5l-9-4z"/>
+        </svg>
+        <div class="pillar-label">PROTECT</div>
+        <div class="pillar-desc">Threat detection · System hardening · Security architecture</div>
       </div>
 
-      <div class="service-card">
-        <div class="service-name">AUTOMATION</div>
-        <div class="service-desc">Power Automate · M365 · Workflow engineering · Scripting · Removing the human from what shouldn't need one</div>
+      <div class="pillar">
+        <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+        </svg>
+        <div class="pillar-label">AUTOMATE</div>
+        <div class="pillar-desc">Workflow engineering · Process design · Operational efficiency</div>
       </div>
 
-      <div class="service-card">
-        <div class="service-name">INFRASTRUCTURE</div>
-        <div class="service-desc">Intune · Jamf · Meraki · IAM governance · Endpoint management · Cloud environments</div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-name">THREAT ASSESSMENT</div>
-        <div class="service-desc">PenTest+ · Vulnerability analysis · Security posture review · Red team framing</div>
+      <div class="pillar">
+        <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+        </svg>
+        <div class="pillar-label">GOVERN</div>
+        <div class="pillar-desc">Risk management · Compliance · Operational oversight</div>
       </div>
 
     </div>
 
-    <!-- Contact -->
-    <p class="section-label">// Get In Touch</p>
-    <a href="mailto:echo@katalystque.com" class="contact-email">echo@katalystque.com</a>
-    <p class="contact-sub">Los Angeles, CA &nbsp;·&nbsp; Available for engagements &amp; consulting</p>
+    <!-- Rotating cybersecurity fact -->
+    <p class="section-label">// Threat Intelligence</p>
+    <div class="fact-card">
+      <p class="fact-text" id="factText"></p>
+      <div class="fact-footer">
+        <span class="fact-counter" id="factCounter"></span>
+        <button class="fact-btn" id="factBtn" aria-label="Load another fact">↺ &nbsp;ANOTHER</button>
+      </div>
+      <div class="fact-progress" id="factProgress" aria-hidden="true"></div>
+    </div>
 
+    <!-- Contact -->
+    <p class="section-label">// Contact</p>
+    <a href="mailto:echo@katalystque.com" class="contact-email">echo@katalystque.com</a>
+    <p class="contact-sub">Los Angeles, CA &nbsp;·&nbsp; Available for engagements</p>
+
+    <!-- Footer -->
     <div class="footer-links" role="navigation" aria-label="Links">
       <a href="https://www.linkedin.com/in/katrina-natura" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg>
@@ -89,7 +108,7 @@
       <a href="https://github.com/katalyst-que" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
       </a>
-      <a href="qualifications.html" class="footer-icon" aria-label="Qualifications &amp; Resume">
+      <a href="qualifications.html" class="footer-icon" aria-label="Credentials">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 17v-1h8v1H8zm0-3v-1h8v1H8zm0-3V10h5v1H8z"/></svg>
       </a>
     </div>
@@ -102,22 +121,92 @@
 
   <script>
     (function () {
-      var gold  = 'color:#C9A84C; font-weight:bold; font-size:13px; font-family:monospace;';
-      var dim   = 'color:#555; font-size:11px; font-family:monospace; line-height:1.7;';
-      var warn  = 'color:#e53935; font-weight:bold; font-size:15px;';
+
+      // ── Console easter egg ───────────────────────────────────────────────────
+      var gold = 'color:#C9A84C; font-weight:bold; font-size:13px; font-family:monospace;';
+      var dim  = 'color:#555; font-size:11px; font-family:monospace; line-height:1.7;';
+      var warn = 'color:#e53935; font-weight:bold; font-size:15px;';
       console.log('%c⚠  PLEASE DON\'T.  :(', warn);
       console.log(
-        '%cThis is a static site. No backend. No forms. No cookies.\n' +
-        'GitHub Pages. HTML and CSS. Nothing worth your time.\n\n' +
-        'If you\'ve found something genuine — I\'d actually like to know:\n' +
-        'echo@katalystque.com\n\n' +
-        'Responsible disclosure: katalystque.com/.well-known/security.txt\n\n' +
+        '%cStatic site. No backend. No forms. No cookies. Nothing worth your time.\n\n' +
+        'If you\'ve found something genuine:\n' +
+        'echo@katalystque.com\n' +
+        'katalystque.com/.well-known/security.txt\n\n' +
         'If you\'re a recruiter in DevTools: hello. :)\n' +
-        'This intentionality is what I build into every client environment.\n' +
+        'This intentionality is what gets built into every client environment.\n' +
         '→ linkedin.com/in/katrina-natura',
         dim
       );
-      console.log('%c— Katrina Natura  //  CySA+ · PenTest+ · SSCP · Security+', gold);
+      console.log('%c— KatalystQue  //  CySA+ \xb7 PenTest+ \xb7 SSCP \xb7 Security+', gold);
+
+      // ── Rotating facts ───────────────────────────────────────────────────────
+      var facts = [
+        'The average data breach in 2024 cost $4.88 million — up 10% from the year before.',
+        '97% of people cannot identify a phishing email on the first attempt.',
+        'A cyberattack occurs somewhere on the internet every 39 seconds.',
+        'Multi-factor authentication blocks 99.9% of automated credential attacks.',
+        'It takes organizations an average of 194 days to identify a data breach.',
+        'The first computer virus — "Brain" — was written in 1986 by two brothers in Pakistan to protect their software from piracy.',
+        '95% of cybersecurity incidents involve human error.',
+        'Ransomware attacks happen every 11 seconds globally.',
+        'There are 3.5 million unfilled cybersecurity jobs worldwide.',
+        'HTTPS means the connection is encrypted — not that the site is trustworthy. Phishing sites can have HTTPS too.',
+        'The Stuxnet worm, discovered in 2010, used four previously unknown zero-day exploits — widely considered the first digital weapon of war.',
+        '"Password123" and "qwerty" are still among the most common passwords found in corporate breach datasets.',
+        'A critical zero-day vulnerability on the open market can sell for over $2.5 million.',
+        'The average time to contain a breach after detection is 73 days.',
+        'A 12-character mixed-character password would take approximately 200 years to crack by brute force — today.',
+        'The term "bug" in computing comes from a literal moth found trapped in a relay of the Harvard Mark II computer in 1947.',
+        'Social engineering — not technical exploits — is responsible for the majority of successful corporate breaches.',
+        'Unpatched vulnerabilities account for 60% of data breach entry points.',
+        'The global cost of cybercrime is projected to reach $10.5 trillion annually by 2025.',
+        'On average, only 5% of company folders are properly protected — most internal data is one compromised credential away.'
+      ];
+
+      var idx = Math.floor(Math.random() * facts.length);
+      var textEl    = document.getElementById('factText');
+      var counterEl = document.getElementById('factCounter');
+      var progressEl= document.getElementById('factProgress');
+      var INTERVAL  = 14000;
+      var timer, progressTimer;
+
+      function showFact(i) {
+        textEl.style.opacity = '0';
+        setTimeout(function () {
+          textEl.textContent = facts[i];
+          counterEl.textContent = (i + 1) + ' / ' + facts.length;
+          textEl.style.opacity = '1';
+        }, 280);
+        resetProgress();
+      }
+
+      function nextFact() {
+        idx = (idx + 1) % facts.length;
+        showFact(idx);
+        restartTimer();
+      }
+
+      function resetProgress() {
+        if (progressEl) {
+          progressEl.style.transition = 'none';
+          progressEl.style.width = '0%';
+          setTimeout(function () {
+            progressEl.style.transition = 'width ' + INTERVAL + 'ms linear';
+            progressEl.style.width = '100%';
+          }, 30);
+        }
+      }
+
+      function restartTimer() {
+        clearInterval(timer);
+        timer = setInterval(nextFact, INTERVAL);
+      }
+
+      document.getElementById('factBtn').addEventListener('click', nextFact);
+
+      showFact(idx);
+      restartTimer();
+
     })();
   </script>
 
