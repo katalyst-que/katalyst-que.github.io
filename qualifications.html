@@ -168,13 +168,15 @@
       function setOrigin() {
         var logo = document.querySelector('.logo-qual');
         if (logo) {
-          var r   = logo.getBoundingClientRect();
-          origin.x = r.left + r.width  / 2;
-          origin.y = r.top  + r.height / 2;
-        } else {
-          origin.x = canvas.width  / 2;
-          origin.y = canvas.height * 0.22;
+          var r = logo.getBoundingClientRect();
+          if (r.width > 0) {
+            origin.x = r.left + r.width  / 2;
+            origin.y = r.top  + r.height / 2;
+            return;
+          }
         }
+        origin.x = canvas.width  / 2;
+        origin.y = canvas.height * 0.20;
       }
 
       function resize() {
@@ -215,8 +217,8 @@
           var r   = rays[i];
           var p   = (Math.sin(2 * Math.PI * t / r.period + r.phase) + 1) / 2;
           var len = diag * r.maxR * p;
-          var op  = p * 0.12;
-          if (op < 0.005) continue;
+          var op  = p * 0.28;
+          if (op < 0.008) continue;
 
           var ex = ox + Math.cos(r.a) * len;
           var ey = oy + Math.sin(r.a) * len;
@@ -225,7 +227,7 @@
           ctx.moveTo(ox, oy);
           ctx.lineTo(ex, ey);
           ctx.strokeStyle = 'rgba(0,230,118,' + op.toFixed(3) + ')';
-          ctx.lineWidth = 0.7;
+          ctx.lineWidth = 1.2;
           ctx.stroke();
 
           if (r.branch && p > 0.22) {
@@ -237,8 +239,8 @@
             ctx.beginPath();
             ctx.moveTo(bx, by);
             ctx.lineTo(bx + Math.cos(ba) * bl, by + Math.sin(ba) * bl);
-            ctx.strokeStyle = 'rgba(0,230,118,' + (op * 0.38).toFixed(3) + ')';
-            ctx.lineWidth = 0.4;
+            ctx.strokeStyle = 'rgba(0,230,118,' + (op * 0.45).toFixed(3) + ')';
+            ctx.lineWidth = 0.7;
             ctx.stroke();
           }
         }
