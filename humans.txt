@@ -1,0 +1,21 @@
+/* TEAM */
+Security Engineer & Developer: Katrina Natura
+Contact: echo@katalystque.com
+LinkedIn: linkedin.com/in/katrina-natura
+From: Los Angeles, CA
+
+/* CREDENTIALS */
+CompTIA PenTest+ ce, CySA+, Security+ ce, Network+ ce, A+ ce, Project+
+ISC2 SSCP, ITIL 4 Foundation, LPI Linux Essentials
+B.S. Cybersecurity — Western Governors University (NSA CAE, Feb 2026)
+
+/* SITE */
+Built with: HTML, CSS — no frameworks, no dependencies
+Hosted on: GitHub Pages
+Domain: katalystque.com
+Last update: 2026-06-06
+Standards: HTML5, CSS3, RFC 9116
+
+/* NOTE */
+If you're reading this, you know about humans.txt.
+That's delightful. Hello. :)

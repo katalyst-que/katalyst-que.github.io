@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /assets/resume.pdf
+
+Sitemap: https://katalystque.com/sitemap.xml
+
+# ──────────────────────────────────────────────────────────
+# Hi.
+#
+# If you're a crawler: thank you for respecting this file.
+#
+# If you're a security researcher who found this:
+# The site is intentionally static. No backend. No inputs.
+# GitHub Pages — the only infrastructure is the CDN edge.
+#
+# Responsible disclosure: katalystque.com/.well-known/security.txt
+# Direct contact: echo@katalystque.com
+#
+# Please don't probe it. :(
+# ──────────────────────────────────────────────────────────

@@ -1,127 +1,93 @@
 <!DOCTYPE html>
+<!--
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │                                                                            │
+  │   Still reading source. Respect.                                          │
+  │                                                                            │
+  │   Nothing sensitive here — just what you'd expect from someone who        │
+  │   thinks about what ends up in view-source before pushing to production.  │
+  │                                                                            │
+  │   → echo@katalystque.com                                                  │
+  │   → /.well-known/security.txt                                             │
+  │                                                                            │
+  └──────────────────────────────────────────────────────────────────────────┘
+-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katrina N. // Qualifications Protocol</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-        box-sizing: border-box;
-        }
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 50px;
-        }
-        .logo-small {
-            width: 80px;
-            margin-bottom: 20px;
-        }
-        .disclaimer-box {
-            border: 1px solid #D4AF37; /* Gold Border */
-            background-color: #111;
-            padding: 30px;
-            margin: 30px 0;
-            text-align: left;
-        }
-        .warning-label {
-            color: #D4AF37;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            display: block;
-        }
-        p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin-top: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-        .btn-gold {
-            background-color: #D4AF37;
-            color: #000;
-        }
-        .btn-gold:hover {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-        .back-link {
-            display: block;
-            margin-top: 40px;
-            color: #555;
-            text-decoration: none;
-            font-size: 0.8rem;
-        }
-        .back-link:hover { color: #D4AF37; }
-        /* MOBILE ADJUSTMENTS */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px; /* Reduces edge gap on phones */
-            }
-            .container {
-                padding-top: 80px; /* Keeps the logo lower but safe */
-                width: 100%;
-                overflow-x: hidden; /* Prevents side-scrolling */
-            }
-            h1 {
-                font-size: 1.5rem; /* CRITICAL: Shrinks the big title so it fits */
-                word-wrap: break-word; /* Safety net if it's still too long */
-            }
-            .logo-small {
-                width: 100px;
-                margin-bottom: 20px;
-            }
-            .disclaimer-box {
-                padding: 15px; /* Gives text more room inside the box */
-                margin: 20px 0;
-            }
-            .btn {
-                width: 100%; /* Makes the button easy to tap */
-                box-sizing: border-box;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qualifications // KatalystQue</title>
+
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy"
+    content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <a href="index.html">
-            <img src="assets/kq-logo.png" alt="Logo" class="logo-small">
-        </a>
+  <div class="qual-container">
 
-        <h1>QUALIFICATIONS</h1>
-
-        <div class="disclaimer-box">
-            <span class="warning-label">// DISCLAIMER: GENERAL COMPETENCIES</span>
-            <p>
-                The document provided below outlines general technical competencies, infrastructure experience, and project management history.
-            </p>
-            <p>
-                <strong>Note:</strong> This is a public-facing summary. Detailed project instrumentation, specific architectural blueprints, and specialized security qualifications are sensitive data and are available <strong>upon request</strong> depending on authorization level.
-            </p>
-        </div>
-
-        <a href="assets/resume.pdf" target="_blank" class="btn btn-gold">
-            OPEN RESUME (PDF)
-        </a>
-
-        <a href="index.html" class="back-link"><< RETURN TO MAIN</a>
+    <div class="qual-header">
+      <a href="index.html">
+        <img src="assets/kq-logo.png" alt="KatalystQue" class="logo-small">
+      </a>
+      <h1>QUALIFICATIONS<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="subtitle">ACTIVE CREDENTIALS &amp; BACKGROUND</p>
     </div>
+
+    <!-- Certifications -->
+    <p class="section-label">// Active Certifications</p>
+    <div class="cert-grid">
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA PenTest+ ce</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA CySA+</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA Security+ ce</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA Network+ ce</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA A+ ce</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>CompTIA Project+</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>ISC2 SSCP</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>ITIL 4 Foundation</div>
+      <div class="cert-item"><span class="status-dot" aria-hidden="true"></span>LPI Linux Essentials</div>
+    </div>
+
+    <!-- Education -->
+    <p class="section-label">// Education</p>
+    <div class="education-block">
+      <div class="edu-title">B.S. Cybersecurity and Information Assurance</div>
+      <div class="edu-school">Western Governors University &nbsp;//&nbsp; Feb 2026</div>
+      <div class="edu-note">
+        NSA Validated Program of Study &nbsp;·&nbsp; NSA Center of Academic Excellence (CAE)<br>
+        Excellence Award — Emerging Technologies in Cybersecurity
+      </div>
+    </div>
+
+    <!-- Resume -->
+    <p class="section-label">// Resume</p>
+    <div class="action-row">
+      <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        OPEN RESUME PDF
+      </a>
+      <a href="mailto:echo@katalystque.com?subject=Inquiry — KatalystQue" class="btn btn-outline">
+        CONTACT
+      </a>
+    </div>
+
+    <a href="index.html" class="back-link">← RETURN</a>
+
+  </div>
+
+  <script>
+    (function () {
+      var dim = 'color:#555; font-size:11px; font-family:monospace; line-height:1.7;';
+      var gold = 'color:#C9A84C; font-weight:bold; font-family:monospace;';
+      console.log('%cStill in DevTools on the qualifications page. Thorough.', gold);
+      console.log('%cEverything you need is on the page.\nNothing extra in the DOM worth inspecting.\nNo hidden fields. No session tokens. No API calls.', dim);
+    })();
+  </script>
 
 </body>
 </html>

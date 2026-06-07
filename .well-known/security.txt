@@ -1,0 +1,36 @@
+# Security Policy — katalystque.com
+# RFC 9116 compliant
+#
+# ──────────────────────────────────────────────────────────────────────────────
+#
+# You found security.txt. That's exactly the kind of thing
+# I'd expect someone careful to check.
+#
+# This site is intentionally static — no backend, no forms,
+# no server-side code. GitHub Pages edge delivery only.
+# The attack surface is intentionally minimal by design.
+#
+# If you've identified a genuine vulnerability, please reach out.
+# Good-faith disclosure is appreciated and will be acknowledged.
+#
+# ──────────────────────────────────────────────────────────────────────────────
+
+Contact: mailto:echo@katalystque.com
+Expires: 2027-06-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://katalystque.com/.well-known/security.txt
+Policy: https://katalystque.com/.well-known/security.txt
+
+# Out of scope:
+# - Automated scanning without prior coordination
+# - Denial of service testing
+# - Social engineering
+# - Physical security testing
+#
+# In scope:
+# - Anything you can demonstrate impacts confidentiality,
+#   integrity, or availability of katalystque.com
+#
+# — Katrina Natura
+#   Cybersecurity Analyst · CySA+ · PenTest+ · ISC2 SSCP
+#   katalystque.com
