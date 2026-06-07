@@ -154,89 +154,55 @@
       console.log('%cStill in DevTools on the capabilities page. Thorough.', gold);
       console.log('%cNothing extra here. No hidden endpoints. No session data.\nIf you\'ve found a genuine issue: echo@katalystque.com', dim);
 
-      // ── Laser background ─────────────────────────────────────────────────
+      // ── Spirograph background (5-pointed, string-art style) ──────────────
+      var TAU    = Math.PI * 2;
       var canvas = document.getElementById('laserBg');
       var ctx    = canvas.getContext('2d');
-      var origin = { x: 0, y: 0 };
-
-      function setOrigin() {
-        var logo = document.querySelector('.logo-qual');
-        if (logo) {
-          var r = logo.getBoundingClientRect();
-          if (r.width > 0) {
-            origin.x = r.left + r.width  / 2;
-            origin.y = r.top  + r.height / 2;
-            return;
-          }
-        }
-        origin.x = canvas.width  / 2;
-        origin.y = canvas.height * 0.20;
-      }
 
       function resize() {
         canvas.width  = window.innerWidth;
         canvas.height = window.innerHeight;
-        setOrigin();
       }
       window.addEventListener('resize', resize);
-      window.addEventListener('load',   function () { resize(); setOrigin(); });
       resize();
 
-      // Ray config
-      var NUM = 22;
-      var rays = [];
-      for (var i = 0; i < NUM; i++) {
-        var base = (i / NUM) * Math.PI * 2;
-        rays.push({
-          a:      base + (Math.random() - 0.5) * 0.3,
-          maxR:   0.15 + Math.random() * 0.42,
-          phase:  Math.random() * Math.PI * 2,
-          period: 9 + Math.random() * 16,
-          branch: Math.random() < 0.55,
-          bOff:   (Math.random() * 0.38 + 0.16) * (Math.random() < 0.5 ? 1 : -1)
-        });
+      var RINGS = 26;
+      var TWIST = Math.PI * 4.6;   // total rotation across all rings
+
+      function drawStar(cx, cy, r, rot, op, lw) {
+        var pts = [], i, a;
+        for (i = 0; i < 5; i++) {
+          a = rot + i * TAU / 5 - TAU / 4;
+          pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
+        }
+        ctx.beginPath();
+        for (i = 0; i < 5; i++) {
+          ctx.moveTo(pts[i][0], pts[i][1]);
+          ctx.lineTo(pts[(i + 2) % 5][0], pts[(i + 2) % 5][1]);
+        }
+        ctx.strokeStyle = 'rgba(0,230,118,' + op.toFixed(3) + ')';
+        ctx.lineWidth = lw;
+        ctx.stroke();
       }
 
       function draw(ts) {
-        var t = ts * 0.001;
-        var w = canvas.width;
-        var h = canvas.height;
-        var ox = origin.x || w / 2;
-        var oy = origin.y || h * 0.22;
-        var diag = Math.sqrt(w * w + h * h);
+        var t    = ts * 0.001;
+        var w    = canvas.width;
+        var h    = canvas.height;
+        var cx   = w / 2;
+        var cy   = h / 2;
+        var base = Math.min(w, h) * 0.44;
+        var rot0 = t * 0.005;
 
         ctx.clearRect(0, 0, w, h);
 
-        for (var i = 0; i < rays.length; i++) {
-          var r   = rays[i];
-          var p   = (Math.sin(2 * Math.PI * t / r.period + r.phase) + 1) / 2;
-          var len = diag * r.maxR * p;
-          var op  = p * 0.37;
-          if (op < 0.008) continue;
-
-          var ex = ox + Math.cos(r.a) * len;
-          var ey = oy + Math.sin(r.a) * len;
-
-          ctx.beginPath();
-          ctx.moveTo(ox, oy);
-          ctx.lineTo(ex, ey);
-          ctx.strokeStyle = 'rgba(0,230,118,' + op.toFixed(3) + ')';
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
-
-          if (r.branch && p > 0.22) {
-            var bx  = ox + Math.cos(r.a) * len * 0.60;
-            var by  = oy + Math.sin(r.a) * len * 0.60;
-            var bl  = len * 0.42;
-            var ba  = r.a + r.bOff;
-
-            ctx.beginPath();
-            ctx.moveTo(bx, by);
-            ctx.lineTo(bx + Math.cos(ba) * bl, by + Math.sin(ba) * bl);
-            ctx.strokeStyle = 'rgba(0,230,118,' + (op * 0.45).toFixed(3) + ')';
-            ctx.lineWidth = 0.7;
-            ctx.stroke();
-          }
+        for (var i = 0; i < RINGS; i++) {
+          var p   = i / (RINGS - 1);
+          var r   = base * (0.04 + 0.96 * p);
+          var rot = rot0 + p * TWIST;
+          var op  = Math.max(0.02, 0.14 - p * 0.07);
+          var lw  = Math.max(0.3, 0.85 - p * 0.52);
+          drawStar(cx, cy, r, rot, op, lw);
         }
 
         requestAnimationFrame(draw);
