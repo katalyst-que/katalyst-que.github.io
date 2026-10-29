@@ -32,7 +32,7 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%2084'%3E%3Cg%20fill='none'%20stroke='%2335c98e'%20stroke-width='5'%20stroke-linejoin='round'%3E%3Cpath%20d='M60,10%20C73,30%2074,55%2060,74%20C46,55%2047,30%2060,10%20Z'/%3E%3Cpath%20d='M30,26%20C48,38%2056,58%2060,74%20C42,62%2032,44%2030,26%20Z'/%3E%3Cpath%20d='M90,26%20C72,38%2064,58%2060,74%20C78,62%2088,44%2090,26%20Z'/%3E%3C/g%3E%3C/svg%3E">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -55,13 +55,13 @@
             <stop offset="100%" stop-color="#0d4f38"/>
           </linearGradient>
         </defs>
-        <path class="petal" d="M120,16 C146,54 148,112 120,148 C92,112 94,54 120,16 Z"/>
-        <path class="petal" d="M66,38 C102,62 118,104 120,148 C84,122 62,80 66,38 Z"/>
-        <path class="petal" d="M174,38 C138,62 122,104 120,148 C156,122 178,80 174,38 Z"/>
-        <path class="petal" d="M24,78 C68,82 104,114 120,148 C76,138 38,112 24,78 Z"/>
-        <path class="petal" d="M216,78 C172,82 136,114 120,148 C164,138 202,112 216,78 Z"/>
-        <path class="petal" d="M6,126 C48,118 92,128 120,148 C80,152 36,144 6,126 Z"/>
-        <path class="petal" d="M234,126 C192,118 148,128 120,148 C160,152 204,144 234,126 Z"/>
+        <path class="petal" pathLength="600" d="M120,16 C146,54 148,112 120,148 C92,112 94,54 120,16 Z"/>
+        <path class="petal" pathLength="600" d="M66,38 C102,62 118,104 120,148 C84,122 62,80 66,38 Z"/>
+        <path class="petal" pathLength="600" d="M174,38 C138,62 122,104 120,148 C156,122 178,80 174,38 Z"/>
+        <path class="petal" pathLength="600" d="M24,78 C68,82 104,114 120,148 C76,138 38,112 24,78 Z"/>
+        <path class="petal" pathLength="600" d="M216,78 C172,82 136,114 120,148 C164,138 202,112 216,78 Z"/>
+        <path class="petal" pathLength="600" d="M6,126 C48,118 92,128 120,148 C80,152 36,144 6,126 Z"/>
+        <path class="petal" pathLength="600" d="M234,126 C192,118 148,128 120,148 C160,152 204,144 234,126 Z"/>
         <path class="pool" fill="none" d="M34,160 Q120,172 206,160"/>
         <circle class="ripple" id="ripple1" cx="120" cy="148" r="58"/>
         <circle class="ripple" id="ripple2" cx="120" cy="148" r="88"/>
@@ -202,6 +202,9 @@
 
       var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      /* progressive enhancement: entrance animations only when motion is ok */
+      if (!reduced) document.body.classList.add('anim');
+
       /* ── Console note — hello, curious one ──────────────────────────── */
       var em   = 'color:#35c98e; font-weight:bold; font-size:13px; font-family:monospace;';
       var dim  = 'color:#5c6f63; font-size:11px; font-family:monospace; line-height:1.8;';
@@ -216,16 +219,16 @@
       console.log('%c— KatalystQue · Los Angeles', gold);
 
       /* ── Scroll reveals ─────────────────────────────────────────────── */
-      var revealEls = document.querySelectorAll('.rv');
       if ('IntersectionObserver' in window && !reduced) {
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
             if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
           });
         }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
-        revealEls.forEach(function (el) { io.observe(el); });
-      } else {
-        revealEls.forEach(function (el) { el.classList.add('in'); });
+        document.querySelectorAll('.rv').forEach(function (el) {
+          el.classList.add('rv-armed');
+          io.observe(el);
+        });
       }
 
       /* ── Scroll progress rail ───────────────────────────────────────── */
