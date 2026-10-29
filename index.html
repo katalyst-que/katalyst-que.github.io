@@ -1,272 +1,347 @@
 <!DOCTYPE html>
 <!--
   ┌──────────────────────────────────────────────────────────────────────────┐
-  │                                                                            │
-  │   Good eye. You found the source.                                         │
-  │                                                                            │
-  │   This site is intentionally static — no server, no forms, no backend,   │
-  │   no cookies, no session state. It's GitHub Pages HTML.                   │
-  │   There is nothing interesting to probe here. Please don't. :(            │
-  │                                                                            │
-  │   If you find a genuine vulnerability anyway, I'd actually like to know:  │
-  │   echo@katalystque.com                                                     │
-  │                                                                            │
-  │   If you're a recruiter or hiring manager reading this —                  │
-  │   this level of intentionality is what I build into client environments.  │
-  │   → linkedin.com/in/katrina-natura                                        │
-  │   → See /.well-known/security.txt for responsible disclosure policy.      │
-  │                                                                            │
+  │                                                                          │
+  │   Good eye. You found the source.                                        │
+  │                                                                          │
+  │   Everything on this page is in this file — no frameworks, no CDNs,      │
+  │   no trackers, no backend. The two fonts are served from this same       │
+  │   repository. If every library on the internet broke tonight,            │
+  │   this site would not notice.                                            │
+  │                                                                          │
+  │   Found something genuine anyway? I'd like to know:                      │
+  │   → echo@katalystque.com                                                 │
+  │   → /.well-known/security.txt                                            │
+  │                                                                          │
   └──────────────────────────────────────────────────────────────────────────┘
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KatalystQue // Security &amp; Automation</title>
+  <title>KatalystQue — Security &amp; Compliance</title>
 
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Permissions-Policy"
     content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
 
-  <meta name="description" content="KatalystQue — Digital protection, automation, and operational security. Los Angeles.">
+  <meta name="description" content="KatalystQue — security, compliance, and automation consultancy. Quiet systems. Provable trust. Los Angeles.">
   <meta name="robots" content="index, follow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%2084'%3E%3Cg%20fill='none'%20stroke='%2335c98e'%20stroke-width='5'%20stroke-linejoin='round'%3E%3Cpath%20d='M60,10%20C73,30%2074,55%2060,74%20C46,55%2047,30%2060,10%20Z'/%3E%3Cpath%20d='M30,26%20C48,38%2056,58%2060,74%20C42,62%2032,44%2030,26%20Z'/%3E%3Cpath%20d='M90,26%20C72,38%2064,58%2060,74%20C78,62%2088,44%2090,26%20Z'/%3E%3C/g%3E%3C/svg%3E">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Pentagram fractal background -->
-  <canvas id="laserBg" aria-hidden="true"></canvas>
+  <!-- ambient layers -->
+  <canvas id="silk" aria-hidden="true"></canvas>
+  <div id="pointerGlow" aria-hidden="true"></div>
+  <div id="scrollRail" aria-hidden="true"></div>
 
-  <div class="container">
+  <main>
 
-    <!-- Brand -->
-    <img src="assets/kq-logo.svg" alt="KatalystQue" class="logo">
-    <h1>KATALYSTQUE<span class="cursor" aria-hidden="true"></span></h1>
-    <p class="hero-tagline">Secure by design. Efficient by default.</p>
+    <!-- ── Hero ─────────────────────────────────────────────────────── -->
+    <section class="hero" id="top">
 
-    <!-- System status (decorative) -->
-    <div class="status-row" aria-hidden="true">
-      <span class="s-item"><span class="s-dot s-dot-green"></span>SYSTEMS NOMINAL</span>
-      <span class="s-sep">//</span>
-      <span class="s-item"><span class="s-dot s-dot-green"></span>ENCRYPTION ACTIVE</span>
-      <span class="s-sep">//</span>
-      <span class="s-item"><span class="s-dot s-dot-gold"></span>MONITORING</span>
-    </div>
+      <svg class="lotus" id="lotus" viewBox="0 0 240 172" role="img"
+           aria-label="KatalystQue lotus mark — tap to bloom">
+        <defs>
+          <linearGradient id="petalGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="#8cf2c8"/>
+            <stop offset="55%" stop-color="#35c98e"/>
+            <stop offset="100%" stop-color="#0d4f38"/>
+          </linearGradient>
+        </defs>
+        <path class="petal" d="M120,16 C146,54 148,112 120,148 C92,112 94,54 120,16 Z"/>
+        <path class="petal" d="M66,38 C102,62 118,104 120,148 C84,122 62,80 66,38 Z"/>
+        <path class="petal" d="M174,38 C138,62 122,104 120,148 C156,122 178,80 174,38 Z"/>
+        <path class="petal" d="M24,78 C68,82 104,114 120,148 C76,138 38,112 24,78 Z"/>
+        <path class="petal" d="M216,78 C172,82 136,114 120,148 C164,138 202,112 216,78 Z"/>
+        <path class="petal" d="M6,126 C48,118 92,128 120,148 C80,152 36,144 6,126 Z"/>
+        <path class="petal" d="M234,126 C192,118 148,128 120,148 C160,152 204,144 234,126 Z"/>
+        <path class="pool" fill="none" d="M34,160 Q120,172 206,160"/>
+        <circle class="ripple" id="ripple1" cx="120" cy="148" r="58"/>
+        <circle class="ripple" id="ripple2" cx="120" cy="148" r="88"/>
+      </svg>
 
-    <!-- Services -->
-    <p class="section-label">// Services</p>
-    <div class="pillars">
+      <h1>KATALYSTQUE</h1>
+      <p class="label">Security &nbsp;·&nbsp; Compliance &nbsp;·&nbsp; Automation</p>
+      <p class="tagline">Quiet systems. Provable trust.</p>
 
-      <div class="pillar">
-        <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5l-9-4z"/>
-        </svg>
-        <div class="pillar-label">PROTECT</div>
-        <div class="pillar-desc">Threat detection · System hardening · Security architecture</div>
+      <div class="scroll-cue" aria-hidden="true"></div>
+    </section>
+
+    <!-- ── Ethos ────────────────────────────────────────────────────── -->
+    <section class="ethos">
+      <div class="wrap">
+        <p class="label rv">Ethos</p>
+        <blockquote class="rv d1">
+          Good security is quiet. It is designed in early, documented well,
+          and <em>proven before anyone asks.</em>
+        </blockquote>
+        <hr class="rule rv d2">
       </div>
+    </section>
 
-      <div class="pillar">
-        <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
-        </svg>
-        <div class="pillar-label">AUTOMATE</div>
-        <div class="pillar-desc">Workflow engineering · Process design · Operational efficiency</div>
+    <!-- ── Practice ─────────────────────────────────────────────────── -->
+    <section class="practice">
+      <div class="wrap">
+        <div class="practice-head rv">
+          <p class="label">The Practice</p>
+        </div>
+        <div class="practice-grid">
+
+          <article class="card rv">
+            <span class="num">01</span>
+            <h3>Protect</h3>
+            <p>Architecture, hardening, and detection for environments that
+               cannot afford surprises — built deliberately, maintained quietly.</p>
+            <svg class="mark" viewBox="0 0 120 84" aria-hidden="true">
+              <path d="M60,10 C73,30 74,55 60,74 C46,55 47,30 60,10 Z"/>
+              <path d="M30,26 C48,38 56,58 60,74 C42,62 32,44 30,26 Z"/>
+              <path d="M90,26 C72,38 64,58 60,74 C78,62 88,44 90,26 Z"/>
+            </svg>
+          </article>
+
+          <article class="card rv d1">
+            <span class="num">02</span>
+            <h3>Assess</h3>
+            <p>Posture and exposure reviews informed by offensive methodology.
+               What an adversary would find — found first, and documented.</p>
+            <svg class="mark" viewBox="0 0 120 84" aria-hidden="true">
+              <path d="M60,10 C73,30 74,55 60,74 C46,55 47,30 60,10 Z"/>
+              <path d="M30,26 C48,38 56,58 60,74 C42,62 32,44 30,26 Z"/>
+              <path d="M90,26 C72,38 64,58 60,74 C78,62 88,44 90,26 Z"/>
+            </svg>
+          </article>
+
+          <article class="card rv d2">
+            <span class="num">03</span>
+            <h3>Govern</h3>
+            <p>Policy, risk, and audit-readiness that hold up under examination —
+               HIPAA, NIST, and the discipline behind the frameworks.</p>
+            <svg class="mark" viewBox="0 0 120 84" aria-hidden="true">
+              <path d="M60,10 C73,30 74,55 60,74 C46,55 47,30 60,10 Z"/>
+              <path d="M30,26 C48,38 56,58 60,74 C42,62 32,44 30,26 Z"/>
+              <path d="M90,26 C72,38 64,58 60,74 C78,62 88,44 90,26 Z"/>
+            </svg>
+          </article>
+
+        </div>
       </div>
+    </section>
 
-      <div class="pillar">
-        <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-        </svg>
-        <div class="pillar-label">GOVERN</div>
-        <div class="pillar-desc">Risk management · Compliance · Operational oversight</div>
+    <!-- ── Trust ────────────────────────────────────────────────────── -->
+    <section class="trust">
+      <svg class="watermark" viewBox="0 0 240 172" aria-hidden="true">
+        <path d="M120,16 C146,54 148,112 120,148 C92,112 94,54 120,16 Z"/>
+        <path d="M66,38 C102,62 118,104 120,148 C84,122 62,80 66,38 Z"/>
+        <path d="M174,38 C138,62 122,104 120,148 C156,122 178,80 174,38 Z"/>
+        <path d="M24,78 C68,82 104,114 120,148 C76,138 38,112 24,78 Z"/>
+        <path d="M216,78 C172,82 136,114 120,148 C164,138 202,112 216,78 Z"/>
+      </svg>
+      <div class="wrap">
+        <p class="label rv">Provenance</p>
+        <blockquote class="rv d1">
+          Certified across offensive, defensive, and governance disciplines —
+          degree-backed, practitioner-led, and held to the same standard it audits.
+        </blockquote>
+
+        <div class="counts">
+          <div class="count rv d1"><b>9</b><span>Certifications</span></div>
+          <div class="count rv d2"><b>3</b><span>Disciplines</span></div>
+          <div class="count rv d3"><b>0</b><span>Third-party code here</span></div>
+        </div>
+
+        <div class="signals rv d2">
+          <p class="signal"><span class="tick">✓</span>No trackers, no cookies, no analytics — open DevTools and verify</p>
+          <p class="signal"><span class="tick">✓</span>Encrypted contact welcome — PGP <a href="https://keys.openpgp.org/search?q=echo%40katalystque.com" target="_blank" rel="noopener noreferrer">0x64B50ED0B36BEE55</a></p>
+          <p class="signal"><span class="tick">✓</span>RFC 9116 disclosure policy — <a href="/.well-known/security.txt">security.txt</a></p>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- ── Contact ──────────────────────────────────────────────────── -->
+    <section class="contact">
+      <div class="wrap">
+        <p class="label rv">Contact</p>
+        <h2 class="rv d1">Begin a conversation.</h2>
+        <div class="rv d2">
+          <a class="email" href="mailto:echo@katalystque.com">echo@katalystque.com</a>
+        </div>
+        <p class="sub rv d2">Los Angeles &nbsp;·&nbsp; Select engagements</p>
 
-    <!-- Rotating cybersecurity fact -->
-    <p class="section-label">// Threat Intelligence</p>
-    <div class="fact-card">
-      <p class="fact-text" id="factText"></p>
-      <div class="fact-footer">
-        <span class="fact-counter" id="factCounter"></span>
-        <button class="fact-btn" id="factBtn" aria-label="Load another fact">↺ &nbsp;ANOTHER</button>
+        <div class="net rv d3">
+          <a href="https://www.linkedin.com/in/katrina-natura" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg>
+          </a>
+          <a href="https://github.com/katalyst-que" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="fact-progress" id="factProgress" aria-hidden="true"></div>
-    </div>
+    </section>
 
-    <!-- Contact -->
-    <p class="section-label">// Contact</p>
-    <a href="mailto:echo@katalystque.com" class="contact-email">echo@katalystque.com</a>
-    <p class="contact-sub">Los Angeles, CA &nbsp;·&nbsp; Available for engagements</p>
+  </main>
 
-    <!-- Footer -->
-    <div class="footer-links" role="navigation" aria-label="Links">
-      <a href="https://www.linkedin.com/in/katrina-natura" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg>
-      </a>
-      <a href="https://github.com/katalyst-que" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-      </a>
-      <a href="qualifications.html" class="footer-icon" aria-label="Credentials">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 17v-1h8v1H8zm0-3v-1h8v1H8zm0-3V10h5v1H8z"/></svg>
-      </a>
-    </div>
-
-    <div class="pgp-bar" title="PGP fingerprint — for encrypted contact">
-      PGP&nbsp;<span class="key">0x64B50ED0B36BEE55</span>
-    </div>
-
-  </div>
+  <footer>
+    <svg class="fl" viewBox="0 0 120 84" aria-hidden="true">
+      <path d="M60,10 C73,30 74,55 60,74 C46,55 47,30 60,10 Z"/>
+      <path d="M30,26 C48,38 56,58 60,74 C42,62 32,44 30,26 Z"/>
+      <path d="M90,26 C72,38 64,58 60,74 C78,62 88,44 90,26 Z"/>
+    </svg>
+    <p>© 2026 KATALYSTQUE &nbsp;·&nbsp; <a href="/.well-known/security.txt">SECURITY.TXT</a> &nbsp;·&nbsp; <a href="/humans.txt">HUMANS.TXT</a></p>
+  </footer>
 
   <script>
     (function () {
+      'use strict';
 
-      // ── Console easter egg ───────────────────────────────────────────────────
-      var gold = 'color:#C9A84C; font-weight:bold; font-size:13px; font-family:monospace;';
-      var dim  = 'color:#555; font-size:11px; font-family:monospace; line-height:1.7;';
-      var warn = 'color:#e53935; font-weight:bold; font-size:15px;';
-      console.log('%c⚠  PLEASE DON\'T.  :(', warn);
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ── Console note — hello, curious one ──────────────────────────── */
+      var em   = 'color:#35c98e; font-weight:bold; font-size:13px; font-family:monospace;';
+      var dim  = 'color:#5c6f63; font-size:11px; font-family:monospace; line-height:1.8;';
+      var gold = 'color:#c9a84c; font-family:monospace; font-size:11px;';
+      console.log('%c◇ Nothing behind the curtain.', em);
       console.log(
-        '%cStatic site. No backend. No forms. No cookies. Nothing worth your time.\n\n' +
-        'If you\'ve found something genuine:\n' +
-        'echo@katalystque.com\n' +
-        'katalystque.com/.well-known/security.txt\n\n' +
-        'If you\'re a recruiter in DevTools: hello. :)\n' +
-        'This intentionality is what gets built into every client environment.\n' +
-        '→ linkedin.com/in/katrina-natura',
-        dim
-      );
-      console.log('%c— KatalystQue  //  CySA+ \xb7 PenTest+ \xb7 SSCP \xb7 Security+', gold);
+        '%cStatic page. No backend, no forms, no cookies, no third-party code.\n' +
+        'The lotus is hand-drawn SVG. The background is one <canvas>.\n' +
+        'Everything you see ships from this repository and nowhere else.\n\n' +
+        'Found something genuine? echo@katalystque.com\n' +
+        'Disclosure policy: /.well-known/security.txt', dim);
+      console.log('%c— KatalystQue · Los Angeles', gold);
 
-      // ── Rotating facts ───────────────────────────────────────────────────────
-      var facts = [
-        'The average data breach in 2024 cost $4.88 million — up 10% from the year before.',
-        '97% of people cannot identify a phishing email on the first attempt.',
-        'A cyberattack occurs somewhere on the internet every 39 seconds.',
-        'Multi-factor authentication blocks 99.9% of automated credential attacks.',
-        'It takes organizations an average of 194 days to identify a data breach.',
-        'The first computer virus — "Brain" — was written in 1986 by two brothers in Pakistan to protect their software from piracy.',
-        '95% of cybersecurity incidents involve human error.',
-        'Ransomware attacks happen every 11 seconds globally.',
-        'There are 3.5 million unfilled cybersecurity jobs worldwide.',
-        'HTTPS means the connection is encrypted — not that the site is trustworthy. Phishing sites can have HTTPS too.',
-        'The Stuxnet worm, discovered in 2010, used four previously unknown zero-day exploits — widely considered the first digital weapon of war.',
-        '"Password123" and "qwerty" are still among the most common passwords found in corporate breach datasets.',
-        'A critical zero-day vulnerability on the open market can sell for over $2.5 million.',
-        'The average time to contain a breach after detection is 73 days.',
-        'A 12-character mixed-character password would take approximately 200 years to crack by brute force — today.',
-        'The term "bug" in computing comes from a literal moth found trapped in a relay of the Harvard Mark II computer in 1947.',
-        'Social engineering — not technical exploits — is responsible for the majority of successful corporate breaches.',
-        'Unpatched vulnerabilities account for 60% of data breach entry points.',
-        'The global cost of cybercrime is projected to reach $10.5 trillion annually by 2025.',
-        'On average, only 5% of company folders are properly protected — most internal data is one compromised credential away.'
+      /* ── Scroll reveals ─────────────────────────────────────────────── */
+      var revealEls = document.querySelectorAll('.rv');
+      if ('IntersectionObserver' in window && !reduced) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      /* ── Scroll progress rail ───────────────────────────────────────── */
+      var rail = document.getElementById('scrollRail');
+      var railTick = false;
+      function paintRail() {
+        var max = document.documentElement.scrollHeight - innerHeight;
+        rail.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+        railTick = false;
+      }
+      addEventListener('scroll', function () {
+        if (!railTick) { railTick = true; requestAnimationFrame(paintRail); }
+      }, { passive: true });
+      paintRail();
+
+      /* ── Lotus bloom on tap / click ─────────────────────────────────── */
+      var lotus = document.getElementById('lotus');
+      var bloomLock = false;
+      lotus.addEventListener('click', function () {
+        if (bloomLock) return;
+        bloomLock = true;
+        lotus.classList.add('bloom');
+        setTimeout(function () {
+          lotus.classList.remove('bloom');
+          bloomLock = false;
+        }, 1500);
+      });
+
+      /* ── Card glow follows the pointer / finger ─────────────────────── */
+      document.querySelectorAll('.card').forEach(function (card) {
+        function aim(x, y) {
+          var r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', ((x - r.left) / r.width * 100) + '%');
+          card.style.setProperty('--my', ((y - r.top) / r.height * 100) + '%');
+        }
+        card.addEventListener('pointermove', function (e) { aim(e.clientX, e.clientY); }, { passive: true });
+        card.addEventListener('touchstart', function (e) {
+          var t = e.touches[0];
+          aim(t.clientX, t.clientY);
+          card.classList.add('touched');
+        }, { passive: true });
+        card.addEventListener('touchend', function () {
+          setTimeout(function () { card.classList.remove('touched'); }, 700);
+        }, { passive: true });
+      });
+
+      if (reduced) return;  /* everything below is pure motion */
+
+      /* ── Pointer glow (eased follow) ────────────────────────────────── */
+      var glow = document.getElementById('pointerGlow');
+      var gx = innerWidth / 2, gy = innerHeight / 3, tx = gx, ty = gy, glowOn = false;
+      addEventListener('pointermove', function (e) {
+        tx = e.clientX; ty = e.clientY;
+        if (!glowOn) { glowOn = true; gx = tx; gy = ty; }
+      }, { passive: true });
+      (function glowLoop() {
+        gx += (tx - gx) * 0.055;
+        gy += (ty - gy) * 0.055;
+        glow.style.transform = 'translate(' + gx.toFixed(1) + 'px,' + gy.toFixed(1) + 'px)';
+        glow.style.opacity = glowOn ? '1' : '0';
+        requestAnimationFrame(glowLoop);
+      })();
+
+      /* ── Silk ribbons — one canvas, no libraries ────────────────────── */
+      var cv  = document.getElementById('silk');
+      var ctx = cv.getContext('2d');
+      var W, H, DPR;
+      function sizeSilk() {
+        DPR = Math.min(devicePixelRatio || 1, 2);
+        W = innerWidth; H = innerHeight;
+        cv.width  = W * DPR;
+        cv.height = H * DPR;
+        cv.style.width  = W + 'px';
+        cv.style.height = H + 'px';
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      }
+      addEventListener('resize', sizeSilk);
+      sizeSilk();
+
+      var RIBBONS = [
+        { base: 0.22, amp: 42, freq: 0.0036, speed: 0.00011, drift: 0.9, alpha: 0.050 },
+        { base: 0.38, amp: 60, freq: 0.0028, speed: 0.00008, drift: 1.4, alpha: 0.042 },
+        { base: 0.58, amp: 48, freq: 0.0042, speed: 0.00013, drift: 1.1, alpha: 0.050 },
+        { base: 0.74, amp: 66, freq: 0.0024, speed: 0.00007, drift: 1.6, alpha: 0.038 },
+        { base: 0.88, amp: 38, freq: 0.0050, speed: 0.00015, drift: 0.8, alpha: 0.044 }
       ];
 
-      var idx = Math.floor(Math.random() * facts.length);
-      var textEl    = document.getElementById('factText');
-      var counterEl = document.getElementById('factCounter');
-      var progressEl= document.getElementById('factProgress');
-      var INTERVAL  = 14000;
-      var timer, progressTimer;
+      var running = true;
+      document.addEventListener('visibilitychange', function () {
+        running = !document.hidden;
+        if (running) requestAnimationFrame(silkLoop);
+      });
 
-      function showFact(i) {
-        textEl.style.opacity = '0';
-        setTimeout(function () {
-          textEl.textContent = facts[i];
-          counterEl.textContent = (i + 1) + ' / ' + facts.length;
-          textEl.style.opacity = '1';
-        }, 280);
-        resetProgress();
+      function silkLoop(ts) {
+        if (!running) return;
+        ctx.clearRect(0, 0, W, H);
+        var scrollDrift = scrollY * 0.04;
+        RIBBONS.forEach(function (r, i) {
+          var yBase = H * r.base - scrollDrift * r.drift;
+          ctx.beginPath();
+          for (var x = -20; x <= W + 20; x += 14) {
+            var y = yBase
+              + Math.sin(x * r.freq + ts * r.speed + i * 2.1) * r.amp
+              + Math.sin(x * r.freq * 0.37 - ts * r.speed * 0.6 + i) * r.amp * 0.5;
+            if (x === -20) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          var shimmer = 0.75 + 0.25 * Math.sin(ts * 0.00045 + i * 1.7);
+          ctx.strokeStyle = 'rgba(53, 201, 142, ' + (r.alpha * shimmer).toFixed(4) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        });
+        requestAnimationFrame(silkLoop);
       }
-
-      function nextFact() {
-        idx = (idx + 1) % facts.length;
-        showFact(idx);
-        restartTimer();
-      }
-
-      function resetProgress() {
-        if (progressEl) {
-          progressEl.style.transition = 'none';
-          progressEl.style.width = '0%';
-          setTimeout(function () {
-            progressEl.style.transition = 'width ' + INTERVAL + 'ms linear';
-            progressEl.style.width = '100%';
-          }, 30);
-        }
-      }
-
-      function restartTimer() {
-        clearInterval(timer);
-        timer = setInterval(nextFact, INTERVAL);
-      }
-
-      document.getElementById('factBtn').addEventListener('click', nextFact);
-
-      showFact(idx);
-      restartTimer();
+      requestAnimationFrame(silkLoop);
 
     })();
-
-    // ── Pentagram fractal background ─────────────────────────────────────────
-    (function () {
-      var TAU = Math.PI * 2;
-      var c   = document.getElementById('laserBg');
-      var ctx = c.getContext('2d');
-      var ox  = 0, oy = 0;
-
-      function resize() {
-        c.width  = innerWidth;
-        c.height = innerHeight;
-        ox = c.width  / 2;
-        oy = c.height / 2;   // centered on viewport so arms extend into all margins
-      }
-      addEventListener('resize', resize);
-      resize();
-
-      function penta(cx, cy, r, rot, depth, alpha) {
-        if (r < 2) return;
-        var i, a, pts = [];
-        for (i = 0; i < 5; i++) {
-          a = rot + i * TAU / 5 - TAU / 4;
-          pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
-        }
-        var sw = Math.max(0.4, depth * 0.65);
-        ctx.beginPath();
-        ctx.moveTo(pts[0][0], pts[0][1]);
-        for (i = 1; i <= 5; i++) ctx.lineTo(pts[i % 5][0], pts[i % 5][1]);
-        ctx.strokeStyle = 'rgba(0,230,118,' + alpha.toFixed(3) + ')';
-        ctx.lineWidth = sw;
-        ctx.stroke();
-        ctx.beginPath();
-        for (i = 0; i < 5; i++) {
-          ctx.moveTo(pts[i][0], pts[i][1]);
-          ctx.lineTo(pts[(i + 2) % 5][0], pts[(i + 2) % 5][1]);
-        }
-        ctx.strokeStyle = 'rgba(0,230,118,' + (alpha * 0.65).toFixed(3) + ')';
-        ctx.lineWidth = sw * 0.6;
-        ctx.stroke();
-        if (depth > 0) {
-          for (i = 0; i < 5; i++) {
-            penta(pts[i][0], pts[i][1], r * 0.382, rot + Math.PI, depth - 1, alpha * 0.55);
-          }
-        }
-      }
-
-      function draw(ts) {
-        var t = ts * 0.001;
-        ctx.clearRect(0, 0, c.width, c.height);
-        var r = Math.min(c.width, c.height) * 0.48 * (0.92 + 0.08 * Math.sin(t * 0.18));
-        penta(ox, oy, r, t * 0.007, 3, 0.22);
-        requestAnimationFrame(draw);
-      }
-
-      requestAnimationFrame(draw);
-    }());
   </script>
 
 </body>

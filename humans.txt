@@ -5,16 +5,23 @@ LinkedIn: linkedin.com/in/katrina-natura
 From: Los Angeles, CA
 
 /* CREDENTIALS */
-CompTIA PenTest+ ce, CySA+, Security+ ce, Network+ ce, A+ ce, Project+
-ISC2 SSCP, ITIL 4 Foundation, LPI Linux Essentials
-B.S. Cybersecurity — Western Governors University (NSA CAE, Feb 2026)
+Nine industry certifications across offensive, defensive,
+and governance disciplines — CompTIA, ISC2, ITIL, LPI.
+B.S. Cybersecurity — Western Governors University (NSA CAE)
 
 /* SITE */
-Built with: HTML, CSS — no frameworks, no dependencies
+Built with: HTML, CSS, vanilla JS — no frameworks, no dependencies
+Type: Cormorant Garamond, self-hosted from this repository
 Hosted on: GitHub Pages
 Domain: katalystque.com
-Last update: 2026-06-06
+Last update: 2026-10-28
 Standards: HTML5, CSS3, RFC 9116
+
+/* DESIGN */
+The lotus is hand-drawn SVG — seven petals, one gradient.
+The background is a single <canvas> drawing five sine ribbons.
+If every CDN on the internet went dark tonight,
+this page would render exactly the same.
 
 /* NOTE */
 If you're reading this, you know about humans.txt.
