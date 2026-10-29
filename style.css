@@ -281,7 +281,8 @@ body.anim .rv.rv-armed.in { opacity: 1; transform: none; }
   max-width: 44rem;
   margin: 2.2rem auto 0;
 }
-.ethos blockquote em {
+.ethos blockquote em,
+.trust blockquote em {
   font-style: italic;
   color: var(--em-soft);
   text-shadow: 0 0 24px rgba(53, 201, 142, 0.35);
